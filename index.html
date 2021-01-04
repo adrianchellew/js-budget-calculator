@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Budget Calculator</title>
+        <meta name="description" content="A vanilla JavaScript budget caluclator app.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+    </head>
+    <body>
+        <main>
+            <div class="container-fluid">
+                <h1 class="text-uppercase">Budget Calculator</h1>
+                <div class="row">
+                    <div class="col-md-4 my-3">
+                        <!-- Budget form -->
+                        <div id="budget-feedback" class="alert alert-danger d-none">
+                        </div>
+                        <form id="budget-form" class="budget-form mb-3">
+                            <h2 class="h5">Enter your budget</h2>
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="budget-input">
+                            </div>
+                            <button type="submit" class="btn btn-outline-primary text-uppercase" id="budget-submit">Calculate</button>
+                        </form>
+                        <!-- Expense form -->
+                        <div id="expense-feedback" class="alert alert-danger d-none">
+                        </div>
+                        <form id="expense-form" class="expense-form">
+                            <h2 class="h5">Enter expense name</h2>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="expense-name-input">
+                            </div>
+                            <h2 class="h5">Enter expense amount</h2>
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="expense-amount-input">
+                            </div>
+                            <button type="submit" class="btn btn-outline-dark text-uppercase" id="expense-submit">Add expense</button>
+                        </form>
+                    </div>
+                    <div class="col-md-8">
+                        <!-- Budget, expense and balance amounts -->
+                        <div class="row text-center my-3">
+                            <div class="col-md-4">
+                                <h2 class="text-uppercase">Budget</h2>
+                                <h3 class="mt-2" id="budget"><span>$ </span><span id="budget-amount">0</span></h3>
+                            </div>
+                            <div class="col-md-4">
+                                <h2 class="text-uppercase">Expenses</h2>
+                                <h3 class="mt-2" id="expense"><span>$ </span><span id="expense-amount">0</span></h3>
+                            </div>
+                            <div class="col-md-4">
+                                <h2 class="text-uppercase">Balance</h2>
+                                <h3 class="mt-2" id="balance"> <span>$ </span><span id="balance-amount">0</span></h3>
+                            </div>
+                        </div>
+                        <!-- Expense list table -->
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="h5">Expense name</th>
+                                    <th class="h5">Expense amount</th>
+                                    <th class="h5">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="expense-list">
+                            </tbody>
+                        </table>
+                        <div id="no-expenses-feedback" class="bg-light p-3">No expenses added to the list.</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="js/app.js" defer></script>
+    </body>
+</html>
